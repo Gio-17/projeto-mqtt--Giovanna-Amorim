@@ -1,4 +1,4 @@
-# projeto-mqtt--Giovanna-Amorim
+
 #include <PubSubClient.h>
 
 #include <UIPEthernet.h>
@@ -46,7 +46,7 @@ void setup() {
 
 void loop() {
 
-      mqttClient.connect("Giovanna Amorim");
+      mqttClient.connect("giovannaamorim");
       estado_sensor = digitalRead(pino2);
 
     if (estado_sensor == 0)
@@ -54,7 +54,7 @@ void loop() {
     {
 
       Serial.println("o rack esta fechado");
-      mensagem = mqttClient.publish("Giovanna Amorim", "Fechado");
+      mensagem = mqttClient.publish("giovannaamorim", "Fechado");
       Serial.println(mensagem);
       mqttClient.loop();
       
@@ -65,7 +65,7 @@ void loop() {
     {
 
       Serial.println("o rack esta aberto");
-      mensagem = mqttClient.publish("Giovanna Amorim", "Aberto");
+      mensagem = mqttClient.publish("giovannaamorim", "Aberto");
       Serial.println(mensagem);
       mqttClient.loop();
       
